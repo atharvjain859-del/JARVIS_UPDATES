@@ -1,10 +1,18 @@
 {
-    "version": "7.0.0",
-
+    "version": "7.0.1",
     "core_update": {
-        "changes": [],
-        "files": []
+        "changes": [
+            "Test automatic GitHub update delivery",
+            "Verify SHA-256 download validation",
+            "Verify core update installation"
+        ],
+        "files": [
+            {
+                "path": "data/update_test_7_0_1.txt",
+                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/update_test_7_0_1.txt",
+                "sha256": "c161a02dcbdeef752d741e98e5ea128ebc6942177dcb871eb7ed137cdd1795ed"
+            }
+        ]
     },
-
     "features": []
 }
