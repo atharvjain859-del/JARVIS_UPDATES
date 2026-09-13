@@ -1,0 +1,3 @@
+JARVIS 7.0.1 TEST UPDATE
+If you can see this file, the automatic updater successfully installed
+a new core-update payload from GitHub.
