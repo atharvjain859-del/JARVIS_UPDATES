@@ -1,10 +1,11 @@
 {
-    "version": "7.1.3",
+    "version": "7.1.4",
     "core_update": {
         "changes": [
             "Fix Instagram monitor installation loop",
             "Install Instagram monitor files as a core update",
-            "Keep both configured Instagram accounts persistent across restarts"
+            "Keep Instagram monitor accounts persistent across restarts",
+            "Add eeshvi.intune to the configured Instagram monitor accounts"
         ],
         "files": [
             {
