@@ -1,16 +1,15 @@
 {
-    "version": "7.1.0",
+    "version": "7.1.1",
     "core_update": {
         "changes": [
-            "Upgrade JARVIS to 7.1",
-            "Add public Instagram monitoring integration",
-            "Add background Instagram change alerts"
+            "Add second configured public Instagram monitor account",
+            "Keep Instagram monitoring state persistent across restarts"
         ],
         "files": [
             {
-                "path": "jarvis.py",
-                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/jarvis.py",
-                "sha256": "dce508f2c195fb8a20aac3fac8a2011f1bce05442adbd5adc15d066c41732c72"
+                "path": "data/instagram_monitors.json",
+                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/instagram_monitors.json",
+                "sha256": "29f84581bd40c57c6a1ff95eb496823574370fd2fb6fad8d239bde9dc29abc61"
             }
         ]
     },
@@ -19,12 +18,12 @@
             "id": "instagram_public_monitor",
             "version": "1.0.0",
             "name": "Instagram Public Account Monitor",
-            "description": "Monitor the publicly accessible Instagram profile for @_aan_yeaa_ in the background and alert JARVIS when the public page or publicly exposed post/reel list changes.",
+            "description": "Monitor publicly accessible Instagram profiles in the background and alert JARVIS when the public page or publicly exposed post/reel list changes.",
             "changes": [
                 "Background public Instagram monitoring",
                 "Change detection and JARVIS voice/console alerts",
                 "Persistent monitor state",
-                "Preconfigured account: @_aan_yeaa_",
+                "Preconfigured accounts: @_aan_yeaa_ and @aahan_____mc",
                 "No login, private-account access, CAPTCHA bypass, or anti-bot circumvention"
             ],
             "files": [
@@ -36,7 +35,7 @@
                 {
                     "path": "data/instagram_monitors.json",
                     "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/instagram_monitors.json",
-                    "sha256": "8d0bcca094c6f11111db01a199da19ff7495ae4b7ae56f8e3b51c01217267d12"
+                    "sha256": "29f84581bd40c57c6a1ff95eb496823574370fd2fb6fad8d239bde9dc29abc61"
                 }
             ]
         }
