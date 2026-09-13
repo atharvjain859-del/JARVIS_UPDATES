@@ -1,42 +1,21 @@
 {
-    "version": "7.1.2",
+    "version": "7.1.3",
     "core_update": {
         "changes": [
-            "Add second configured public Instagram monitor account",
-            "Keep Instagram monitoring state persistent across restarts",
-            "Fix Instagram feature checksum issue"
+            "Fix Instagram monitor installation loop",
+            "Install Instagram monitor files as a core update",
+            "Keep both configured Instagram accounts persistent across restarts"
         ],
         "files": [
             {
+                "path": "tools/instagram_monitor.py",
+                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/tools/instagram_monitor.py"
+            },
+            {
                 "path": "data/instagram_monitors.json",
-                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/instagram_monitors.json",
-                "sha256": "29f84581bd40c57c6a1ff95eb496823574370fd2fb6fad8d239bde9dc29abc61"
+                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/instagram_monitors.json"
             }
         ]
     },
-    "features": [
-        {
-            "id": "instagram_public_monitor",
-            "version": "1.0.1",
-            "name": "Instagram Public Account Monitor",
-            "description": "Monitor publicly accessible Instagram profiles in the background and alert JARVIS when the public page or publicly exposed post/reel list changes.",
-            "changes": [
-                "Background public Instagram monitoring",
-                "Change detection and JARVIS voice/console alerts",
-                "Persistent monitor state",
-                "Preconfigured accounts: @_aan_yeaa_ and @aahan_____mc",
-                "No login, private-account access, CAPTCHA bypass, or anti-bot circumvention"
-            ],
-            "files": [
-                {
-                    "path": "tools/instagram_monitor.py",
-                    "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/tools/instagram_monitor.py"
-                },
-                {
-                    "path": "data/instagram_monitors.json",
-                    "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/instagram_monitors.json"
-                }
-            ]
-        }
-    ]
+    "features": []
 }
