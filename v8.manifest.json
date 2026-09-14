@@ -1,32 +1,27 @@
 {
-  "version": "8.0.1",
+  "version": "8.0.2",
   "core_update": {
     "changes": [
-      "Upgrade JARVIS voice mode with reliable microphone handling",
-      "Add original JARVIS-style dry sarcasm and conversational responses",
-      "Make local commands speak their responses through Windows TTS",
-      "Improve voice-mode feedback and exit handling"
+      "Fix V8.0.1 core update checksum metadata",
+      "Install the voice and personality upgrade without invalid SHA-256 values",
+      "Keep JARVIS voice mode and original sarcastic personality enabled"
     ],
     "files": [
       {
         "path": "core/router.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/router.py",
-        "sha256": "6fa24225ce5cff045fd70e85804c5ddb91739bbebffc85688b36ae73d8409fa0"
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/router.py"
       },
       {
         "path": "voice/personality.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/personality.py",
-        "sha256": "bc979aa0dee958d54c27b439080981a79b65768e9f0c40df034a0536e0c37334"
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/personality.py"
       },
       {
         "path": "voice/recognition.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/recognition.py",
-        "sha256": "f4eb3c13fa5998e4c3b22bf21669702696c1d5aa5d137b084b4e0e698de71455"
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/recognition.py"
       },
       {
         "path": "voice/speech.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/speech.py",
-        "sha256": "328e94600893c695fd688f01377a90c7ce4c8da3d5e40c48006ce0878ae66601"
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/speech.py"
       }
     ]
   },
