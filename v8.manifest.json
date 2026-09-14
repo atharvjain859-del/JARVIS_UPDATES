@@ -1,27 +1,16 @@
 {
-  "version": "8.0.2",
+  "version": "8.1.0",
   "core_update": {
     "changes": [
-      "Fix V8.0.1 core update checksum metadata",
-      "Install the voice and personality upgrade without invalid SHA-256 values",
-      "Keep JARVIS voice mode and original sarcastic personality enabled"
+      "Replace the scripted-only brain with a real conversational AI provider",
+      "Add OpenAI Responses API support",
+      "Keep OpenRouter compatibility",
+      "Add short-term conversation memory and JARVIS personality instructions"
     ],
     "files": [
       {
-        "path": "core/router.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/router.py"
-      },
-      {
-        "path": "voice/personality.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/personality.py"
-      },
-      {
-        "path": "voice/recognition.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/recognition.py"
-      },
-      {
-        "path": "voice/speech.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/speech.py"
+        "path": "core/ai.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/ai.py"
       }
     ]
   },
