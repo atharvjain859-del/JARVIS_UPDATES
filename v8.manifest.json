@@ -1,0 +1,12 @@
+{
+    "version": "8.0.0",
+    "core_update": {
+        "changes": [
+            "Initialize JARVIS V8 modular foundation",
+            "Integrate automatic update checking",
+            "Add verified downloads, backups, and rollback-ready update storage"
+        ],
+        "files": []
+    },
+    "features": []
+}
