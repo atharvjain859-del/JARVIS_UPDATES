@@ -1,16 +1,24 @@
 {
-  "version": "8.1.0",
+  "version": "8.1.1",
   "core_update": {
     "changes": [
-      "Replace the scripted-only brain with a real conversational AI provider",
-      "Add OpenAI Responses API support",
-      "Keep OpenRouter compatibility",
-      "Add short-term conversation memory and JARVIS personality instructions"
+      "Route unknown natural-language questions to the real AI brain",
+      "Fix voice recognition to use the working BH900 PRO microphone",
+      "Keep OpenAI and OpenRouter conversational AI support",
+      "Keep JARVIS personality and local commands"
     ],
     "files": [
       {
         "path": "core/ai.py",
         "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/ai.py"
+      },
+      {
+        "path": "core/router.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/router.py"
+      },
+      {
+        "path": "voice/recognition.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/recognition.py"
       }
     ]
   },
