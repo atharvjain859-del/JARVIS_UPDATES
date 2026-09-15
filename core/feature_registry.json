@@ -1,0 +1,53 @@
+{
+  "registry_version": "8.2.0",
+  "permanent_numbering": {
+    "range": "1-450",
+    "odd_numbers": "CORE",
+    "even_numbers": "OPTIONAL/NEW FEATURE",
+    "note": "The original individual 1-450 names were not available in the current source, so this file does not invent or renumber them."
+  },
+  "implemented_now": {
+    "151-200": {
+      "category": "Social & Communication",
+      "status": "implemented_capability_pack",
+      "capabilities": [
+        "Launch Instagram, Discord, WhatsApp, Telegram, Reddit, Facebook, LinkedIn and X",
+        "Social/web search for Reddit, YouTube, Google and GitHub",
+        "Save persistent social bookmarks",
+        "List saved social bookmarks",
+        "Open a saved social bookmark"
+      ]
+    },
+    "251-300": {
+      "category": "Coding & Development",
+      "status": "implemented_capability_pack",
+      "capabilities": [
+        "Python syntax checking",
+        "Python project/file scanning",
+        "List Python files recursively",
+        "Run a Python file with a 30-second safety timeout"
+      ]
+    },
+    "401-450": {
+      "category": "Advanced & Autonomous JARVIS",
+      "status": "implemented_capability_pack",
+      "capabilities": [
+        "Persistent autonomous task queue",
+        "List pending autonomous tasks",
+        "Complete tasks by ID",
+        "Clear completed tasks",
+        "Persistent local sensor readings",
+        "Latest sensor reading retrieval",
+        "Live weather lookup by city"
+      ]
+    }
+  },
+  "scheduled": {
+    "1-100": {
+      "status": "scheduled",
+      "date": "2026-09-20",
+      "timezone": "Asia/Kolkata",
+      "classification": "CORE"
+    }
+  }
+}
