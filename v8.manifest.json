@@ -1,24 +1,34 @@
 {
-  "version": "8.1.1",
+  "version": "8.2.0",
   "core_update": {
     "changes": [
-      "Route unknown natural-language questions to the real AI brain",
-      "Fix voice recognition to use the working BH900 PRO microphone",
-      "Keep OpenAI and OpenRouter conversational AI support",
-      "Keep JARVIS personality and local commands"
+      "Add social and communication launch/search/bookmark tools",
+      "Add Python coding, syntax checking, project scanning and safe test-run tools",
+      "Add persistent autonomous task queue and task management",
+      "Add weather lookup and local IoT sensor reading storage",
+      "Expand router commands for the new capability packs",
+      "Keep existing AI, voice, website monitoring and JARVIS personality"
     ],
     "files": [
-      {
-        "path": "core/ai.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/ai.py"
-      },
       {
         "path": "core/router.py",
         "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/router.py"
       },
       {
-        "path": "voice/recognition.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/voice/recognition.py"
+        "path": "skills/social/social_tools.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/skills/social/social_tools.py"
+      },
+      {
+        "path": "skills/development/dev_tools.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/skills/development/dev_tools.py"
+      },
+      {
+        "path": "skills/autonomous/autonomous_tools.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/skills/autonomous/autonomous_tools.py"
+      },
+      {
+        "path": "skills/iot/iot_tools.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/skills/iot/iot_tools.py"
       }
     ]
   },
