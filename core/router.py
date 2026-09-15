@@ -50,10 +50,13 @@ class Router:
 
         if l in ("help", "commands", "?"):
             return self.say(
-                "Commands: status, system, security, current, clear current, mission <text>, "
-                "remember <text>, memory, monitor <url> every <n> seconds, list monitors, "
-                "stop monitoring <url>, open <target>, search google <query>, search youtube <query>, "
-                "run <program>, voice, exit. Ask me anything else normally and I'll use my AI brain."
+                "Commands: status, system, security, current, clear current, mission <text>, remember <text>, memory, "
+                "monitor <url> every <n> seconds, list monitors, stop monitoring <url>, open <target>, "
+                "search google <query>, search youtube <query>, run <program>, voice. "
+                "Social: open instagram/discord/whatsapp/telegram, social search reddit <query>, save social <name> <url>, "
+                "list social bookmarks, open social <name>. Coding: check python <file>, scan python <file>, run python <file>, "
+                "find python <folder>. Autonomous: add task <text>, autonomous tasks, complete task <id>, clear completed tasks. "
+                "IoT: weather <city>, latest sensor. Ask me anything else normally and I'll use my AI brain."
             )
 
         if l in ("voice", "voice mode", "start voice"):
@@ -96,6 +99,67 @@ class Router:
         if l.startswith("run "):
             return self.run_program(x[4:].strip())
 
+        # Social tools
+        if l.startswith("open social "):
+            from skills.social.social_tools import open_bookmark
+            return self.say(open_bookmark(x[12:].strip()))
+        if l.startswith("social search "):
+            parts = x.split(maxsplit=2)
+            if len(parts) < 3:
+                return self.say("Usage: social search <reddit|youtube|google|github> <query>")
+            from skills.social.social_tools import social_search
+            ok, msg = social_search(parts[1], parts[2])
+            return self.say(msg)
+        if l.startswith("save social "):
+            parts = x.split(maxsplit=2)
+            if len(parts) < 3 or " " not in parts[2]:
+                return self.say("Usage: save social <name> <url>")
+            name, url = parts[1], parts[2].split(maxsplit=1)[1]
+            from skills.social.social_tools import save_bookmark
+            return self.say(save_bookmark(name, url))
+        if l == "list social bookmarks":
+            from skills.social.social_tools import list_bookmarks
+            return self.say(list_bookmarks())
+        if l in {"open instagram", "open discord", "open whatsapp", "open telegram", "open reddit", "open linkedin", "open facebook", "open x", "open twitter"}:
+            from skills.social.social_tools import open_social
+            return self.say(open_social(l[5:])[1])
+
+        # Coding tools
+        if l.startswith("check python "):
+            from skills.development.dev_tools import syntax_check
+            return self.say(syntax_check(x[13:].strip()))
+        if l.startswith("scan python "):
+            from skills.development.dev_tools import scan_python
+            return self.say(scan_python(x[12:].strip()))
+        if l.startswith("run python "):
+            from skills.development.dev_tools import run_python
+            return self.say(run_python(x[11:].strip()))
+        if l.startswith("find python "):
+            from skills.development.dev_tools import find_python_files
+            return self.say(find_python_files(x[12:].strip()))
+
+        # Autonomous workflow tools
+        if l.startswith("add task "):
+            from skills.autonomous.autonomous_tools import add_task
+            return self.say(add_task(x[9:].strip()))
+        if l in {"autonomous tasks", "list autonomous tasks", "tasks"}:
+            from skills.autonomous.autonomous_tools import list_tasks
+            return self.say(list_tasks())
+        if l.startswith("complete task "):
+            from skills.autonomous.autonomous_tools import complete_task
+            return self.say(complete_task(x[14:].strip()))
+        if l == "clear completed tasks":
+            from skills.autonomous.autonomous_tools import clear_completed
+            return self.say(clear_completed())
+
+        # IoT/weather tools
+        if l.startswith("weather "):
+            from skills.iot.iot_tools import get_weather
+            return self.say(get_weather(x[8:].strip()))
+        if l == "latest sensor":
+            from skills.iot.iot_tools import latest_sensor
+            return self.say(latest_sensor())
+
         conversational = jarvis_reply(x)
         if conversational is not None:
             return self.say(conversational)
@@ -107,7 +171,6 @@ class Router:
             except Exception as exc:
                 return self.say(f"That skill failed: {exc}")
 
-        # Unknown natural-language requests go to the real AI brain.
         return self.ask_ai(x)
 
     def ask_ai(self, command):
@@ -128,10 +191,8 @@ class Router:
             from voice.recognition import listen
         except Exception as exc:
             return self.say(f"Voice recognition could not load: {exc}")
-
         self.say("Voice mode activated. Finally, someone decided to use my voice.")
         self.say("Ask me anything. Say 'exit voice' when you want to return to typing.")
-
         while self.app.running:
             try:
                 text = listen(timeout=5, phrase_time_limit=8)
@@ -158,6 +219,10 @@ class Router:
             "google": "https://google.com",
             "instagram": "https://instagram.com",
             "reddit": "https://reddit.com",
+            "discord": "https://discord.com/app",
+            "whatsapp": "https://web.whatsapp.com/",
+            "telegram": "https://web.telegram.org/",
+            "linkedin": "https://linkedin.com/",
         }
         key = target.lower()
         if key in websites:
