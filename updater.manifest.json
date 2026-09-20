@@ -1,22 +1,26 @@
 {
-    "version": "7.1.4",
-    "core_update": {
-        "changes": [
-            "Fix Instagram monitor installation loop",
-            "Install Instagram monitor files as a core update",
-            "Keep Instagram monitor accounts persistent across restarts",
-            "Add eeshvi.intune to the configured Instagram monitor accounts"
-        ],
-        "files": [
-            {
-                "path": "tools/instagram_monitor.py",
-                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/tools/instagram_monitor.py"
-            },
-            {
-                "path": "data/instagram_monitors.json",
-                "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/instagram_monitors.json"
-            }
-        ]
-    },
-    "features": []
+  "version": "7.1.5",
+  "core_update": {
+    "changes": [
+      "Add a side-effect-free routing policy helper",
+      "Require confirmation for commands with external effects",
+      "Add SHA-256 integrity metadata"
+    ],
+    "files": [
+      {
+        "path": "core/intent_policy.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/intent_policy.py",
+        "sha256": "10f7dfa492f1c31fea7b6158c829b68927287fa4a2e09c3c3fd98855e263b165"
+      }
+    ]
+  },
+  "features": [
+    {
+      "id": "intent_action_layer",
+      "name": "Intent and action routing",
+      "description": "Interpret open, search, memory, and action requests with confirmation gates.",
+      "status": "requires_approval",
+      "approval_required": true
+    }
+  ]
 }
