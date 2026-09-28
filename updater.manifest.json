@@ -1,5 +1,5 @@
 {
-  "version": "7.1.5",
+  "version": "7.1.6",
   "core_update": {
     "changes": [
       "Add a side-effect-free routing policy helper",
@@ -21,6 +21,14 @@
       "description": "Interpret open, search, memory, and action requests with confirmation gates.",
       "status": "requires_approval",
       "approval_required": true
+    },
+    {
+      "id": "openssh_sftp_file_access",
+      "name": "OpenSSH / SFTP file access",
+      "description": "Optional Windows OpenSSH Server setup guidance for direct SSH/SFTP file transfer between trusted PCs; no messaging platform required. System service, firewall, and remote-access changes require explicit approval.",
+      "status": "requires_approval",
+      "approval_required": true,
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/main/features/openssh_sftp_setup.md"
     }
   ]
 }
