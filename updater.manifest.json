@@ -1,18 +1,10 @@
 {
-  "version": "7.1.6",
+  "version": "7.1.7",
   "core_update": {
     "changes": [
-      "Add a side-effect-free routing policy helper",
-      "Require confirmation for commands with external effects",
-      "Add SHA-256 integrity metadata"
+      "Queue JARVIS V8.5 portable feature pack for discovery; no core replacement in this release."
     ],
-    "files": [
-      {
-        "path": "core/intent_policy.py",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/intent_policy.py",
-        "sha256": "10f7dfa492f1c31fea7b6158c829b68927287fa4a2e09c3c3fd98855e263b165"
-      }
-    ]
+    "files": []
   },
   "features": [
     {
@@ -25,10 +17,110 @@
     {
       "id": "openssh_sftp_file_access",
       "name": "OpenSSH / SFTP file access",
-      "description": "Optional Windows OpenSSH Server setup guidance for direct SSH/SFTP file transfer between trusted PCs; no messaging platform required. System service, firewall, and remote-access changes require explicit approval.",
+      "description": "Optional Windows OpenSSH Server setup guidance for direct SSH/SFTP file transfer between trusted PCs; system service, firewall, and remote-access changes require explicit approval.",
       "status": "requires_approval",
       "approval_required": true,
       "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/main/features/openssh_sftp_setup.md"
+    },
+    {
+      "id": "universal_command_router",
+      "name": "Universal Command Router",
+      "description": "Normalizes supported natural-language phrasing and routes only registered commands.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "system_intelligence",
+      "name": "System Intelligence",
+      "description": "Read-only host, CPU, memory, disk, battery, and uptime summary; metrics may be platform-dependent.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "smart_app_launcher",
+      "name": "Smart App Launcher",
+      "description": "Launch allowlisted applications and websites; no arbitrary shell command execution.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "persistent_memory",
+      "name": "Persistent Memory",
+      "description": "Local user-approved preferences stored in a dedicated data file; supports view and forget.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "offline_brain",
+      "name": "Offline Brain",
+      "description": "Explicit offline fallback responses; general local-model reasoning requires a separately configured model.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "file_intelligence",
+      "name": "File Intelligence",
+      "description": "Search selected user folders and report paths; no automatic file edits, deletion, or uploads.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "focus_mode",
+      "name": "Focus Mode",
+      "description": "Local countdown timer and focus session commands.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "network_watch",
+      "name": "Network Watch",
+      "description": "Basic DNS/connectivity check only; not a security scanner.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "hardware_simulator",
+      "name": "Hardware Simulator",
+      "description": "Virtual LED/device state for demos; no physical GPIO access.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
+    },
+    {
+      "id": "portable_profile",
+      "name": "Portable Profile",
+      "description": "Detects current host and app location without uploading device identity.",
+      "status": "queued",
+      "approval_required": true,
+      "installable": false,
+      "release": "8.5.0",
+      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/feat/v8-5-portable-feature-queue/features/v8_5_portable_feature_pack.md"
     }
   ]
 }
