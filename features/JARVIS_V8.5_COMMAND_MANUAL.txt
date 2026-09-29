@@ -1,0 +1,59 @@
+JARVIS V8.5 PORTABLE FEATURE PACK
+Detailed command manual — QUEUED SPECIFICATION
+This document describes planned commands. It does not mean the features are installed.
+Target: Windows user-space; no administrator rights intended.
+
+COMMANDS
+help
+status
+system report
+battery
+uptime
+open youtube
+open github
+open chatgpt
+open calculator
+open notepad
+open downloads
+remember <preference>
+memory
+forget <item>
+explain <topic>
+ask <question>
+find <filename fragment>
+focus <1-120 minutes>
+timer <1-120 minutes>
+network check
+simulate led on
+simulate led off
+simulate status
+profile
+modules
+version
+
+EXAMPLES
+JARVIS, show my system report.
+Open GitHub.
+Remember that I prefer concise answers.
+Find a file named project notes.
+Start a 25-minute focus session.
+Simulate turning on the LED.
+Show this computer's portable profile.
+
+FEATURE BEHAVIOR
+1 Universal Command Router: normalizes aliases and routes only registered capabilities.
+2 System Intelligence: read-only OS, CPU/RAM/disk/battery/uptime. Some metrics are optional/platform-specific.
+3 Smart App Launcher: allowlisted app/site targets only; no arbitrary shell commands.
+4 Persistent Memory: local opt-in facts; view and forget supported; never store passwords, API keys, OTPs, or private keys.
+5 Offline Brain: transparent fallback; general AI requires an installed local model or reachable provider.
+6 File Intelligence: searches selected user folders, reports paths only; no deletion, edits, or upload.
+7 Focus Mode: local timer; Ctrl+C cancels in terminal mode.
+8 Network Watch: basic DNS check; not a security scanner.
+9 Hardware Simulator: virtual state only; no GPIO/hardware actuation.
+10 Portable Profile: local host/app info; no fingerprint upload.
+
+REQUIREMENTS
+Windows 10/11; user-level permissions; Python version and optional packages will be specified in the installable release.
+Network required for web launch and DNS check. AI requires configured provider/model.
+Do not assume USB autorun. Launch manually unless the user explicitly configures an approved startup method.
+Safety: feature installation must verify SHA-256, back up changed paths, reject path traversal, avoid overwriting user data, and require confirmation for side effects.
