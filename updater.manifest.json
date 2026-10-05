@@ -1,34 +1,102 @@
 {
-  "version": "7.1.7",
+  "version": "8.0.0",
   "core_update": {
     "changes": [
-      "Weekly maintenance release with release traceability",
-      "Keep the existing safety-oriented core helper unchanged rather than shipping an untested code change",
-      "Add SHA-256 integrity metadata for the release note"
+      "Major native Windows migration scaffold",
+      "Add self-contained .NET 8 win-x64 build definition so the target PC does not need Python or a separately installed .NET runtime",
+      "Add JARVIS Arduino USB/Serial SDK and protocol",
+      "Preserve the existing Python V8 runtime during migration; no destructive replacement"
     ],
     "files": [
       {
-        "path": "release_notes/7.1.7.md",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/release_notes/7.1.7.md",
-        "sha256": "4890939cdab5119b4ac044ff93adeba2824823d15edb70faffd5fa622de80038"
+        "path": "release_notes/8.0.0.md",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/release_notes/8.0.0.md",
+        "sha256": "d1598bdf1d568813cd224142c8025f99756b9ba5ccd7c337d08aae81c918ced2"
       }
     ]
   },
   "features": [
     {
-      "id": "intent_action_layer",
-      "name": "Intent and action routing",
-      "description": "Interpret open, search, memory, and action requests with confirmation gates.",
+      "id": "native_windows_runtime",
+      "name": "Native Windows JARVIS runtime",
+      "description": "C#/.NET 8 self-contained win-x64 runtime scaffold. Replacing the active Python runtime requires explicit approval.",
+      "status": "requires_approval",
+      "approval_required": true,
+      "files": [
+        {
+          "path": "native/Jarvis.Native/Jarvis.Native.csproj",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/native/Jarvis.Native/Jarvis.Native.csproj",
+          "sha256": "ac5e22759c54bdc19b0ffd6f9b1b74b2735b8cfacfddc0eab731c39d7d858f6e"
+        },
+        {
+          "path": "native/Jarvis.Native/Program.cs",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/native/Jarvis.Native/Program.cs",
+          "sha256": "62040821f87d440d5f7ff085becad90dfb1e1f08c54b3d024f8fa5b3b01d27ec"
+        },
+        {
+          "path": "native/Jarvis.Native/JarvisApp.cs",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/native/Jarvis.Native/JarvisApp.cs",
+          "sha256": "df64132aa5ce67b411c0f9c036e840f8ecba961a3349688870c2ba30481407f2"
+        },
+        {
+          "path": "native/README.md",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/native/README.md",
+          "sha256": "0e62ad098083674f353c810af2fbeaa8b99e9d81649d971712124516e812b36c"
+        },
+        {
+          "path": "native/build.ps1",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/native/build.ps1",
+          "sha256": "364f52d33023890e014f8ab4f1900f5eb2ce0508305cfa4375be12053783be3b"
+        }
+      ]
+    },
+    {
+      "id": "arduino_jarvis_sdk",
+      "name": "JARVIS Arduino SDK",
+      "description": "USB/Serial Arduino library for receiving explicit JARVIS commands and sending device events.",
+      "status": "requires_approval",
+      "approval_required": true,
+      "files": [
+        {
+          "path": "arduino/JARVIS/src/JARVIS.h",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/arduino/JARVIS/src/JARVIS.h",
+          "sha256": "bac48f805a9da09af8c4a15932c18f10f6f6d85253076815e89922ca92d112f8"
+        },
+        {
+          "path": "arduino/JARVIS/src/JARVIS.cpp",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/arduino/JARVIS/src/JARVIS.cpp",
+          "sha256": "7b05ad2322ce835e93ba91bf00528a9fd3586e120e2d2ebce51541fd65351f29"
+        },
+        {
+          "path": "arduino/JARVIS/library.properties",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/arduino/JARVIS/library.properties",
+          "sha256": "df3e9a1e3b9cdad7eb91920d8630f1b9e189eec156ae7e405459cbb94fbb2221"
+        },
+        {
+          "path": "arduino/JARVIS/examples/Basic/Basic.ino",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/arduino/JARVIS/examples/Basic/Basic.ino",
+          "sha256": "78c3b8c1f7bb3a88fdc9c08a949b34f8c460b2860eff5f5eb061e0ab9e8071cb"
+        },
+        {
+          "path": "protocol/JARVIS_SERIAL_PROTOCOL.md",
+          "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/protocol/JARVIS_SERIAL_PROTOCOL.md",
+          "sha256": "51df700a5412ffd77b0078c769ab7599315712656919601aa2d47168ae06dc77"
+        }
+      ]
+    },
+    {
+      "id": "phone_integration",
+      "name": "Phone integration",
+      "description": "Future nearby-phone notification and control bridge. No automatic phone pairing or notification service is installed by this release.",
       "status": "requires_approval",
       "approval_required": true
     },
     {
-      "id": "openssh_sftp_file_access",
-      "name": "OpenSSH / SFTP file access",
-      "description": "Optional Windows OpenSSH Server setup guidance for direct SSH/SFTP file transfer between trusted PCs; no messaging platform required. System service, firewall, and remote-access changes require explicit approval.",
+      "id": "native_server_migration",
+      "name": "Native JARVIS communication service",
+      "description": "Future replacement for the unused Python server layer. Service installation, startup, networking, and firewall changes require explicit approval.",
       "status": "requires_approval",
-      "approval_required": true,
-      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/main/features/openssh_sftp_setup.md"
+      "approval_required": true
     }
   ]
 }
