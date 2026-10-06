@@ -6,6 +6,7 @@ import json
 import os
 import re
 import subprocess
+import shlex
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[1]
@@ -123,7 +124,10 @@ def _launch_project(name, info):
     try:
         if command:
             cwd = path if path.is_dir() else path.parent
-            subprocess.Popen(command, cwd=str(cwd), shell=True)
+            parts = shlex.split(str(command), posix=False)
+            if not parts:
+                return False, f"No launch command is configured for {name}."
+            subprocess.Popen(parts, cwd=str(cwd))
         else:
             os.startfile(str(path))
         return True, f"Launching {name}."
@@ -149,4 +153,4 @@ def execute(command):
             return True, f"Opening {target}."
         except Exception as exc:
             return True, f"I couldn't open {target}: {exc}"
-    return True, f"I couldn't find an installed application or registered project called {target}."
+    return False, None
