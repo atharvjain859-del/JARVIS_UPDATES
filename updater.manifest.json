@@ -1,34 +1,38 @@
 {
-  "version": "7.1.7",
+  "version": "7.1.8",
   "core_update": {
     "changes": [
-      "Weekly maintenance release with release traceability",
-      "Keep the existing safety-oriented core helper unchanged rather than shipping an untested code change",
-      "Add SHA-256 integrity metadata for the release note"
+      "Add future-proof Windows application discovery and launching",
+      "Add registered project and script launching",
+      "Integrate universal executor with the existing V8 router",
+      "Preserve existing website, Python, social, and generic run fallbacks"
     ],
     "files": [
       {
-        "path": "release_notes/7.1.7.md",
-        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/release_notes/7.1.7.md",
-        "sha256": "4890939cdab5119b4ac044ff93adeba2824823d15edb70faffd5fa622de80038"
+        "path": "core/universal_executor.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/universal_executor.py"
+      },
+      {
+        "path": "core/router.py",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/core/router.py"
+      },
+      {
+        "path": "data/projects.json",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/data/projects.json"
+      },
+      {
+        "path": "release_notes/7.1.8.md",
+        "url": "https://raw.githubusercontent.com/atharvjain859-del/JARVIS_UPDATES/main/release_notes/7.1.8.md"
       }
     ]
   },
   "features": [
     {
-      "id": "intent_action_layer",
-      "name": "Intent and action routing",
-      "description": "Interpret open, search, memory, and action requests with confirmation gates.",
-      "status": "requires_approval",
-      "approval_required": true
-    },
-    {
-      "id": "openssh_sftp_file_access",
-      "name": "OpenSSH / SFTP file access",
-      "description": "Optional Windows OpenSSH Server setup guidance for direct SSH/SFTP file transfer between trusted PCs; no messaging platform required. System service, firewall, and remote-access changes require explicit approval.",
-      "status": "requires_approval",
-      "approval_required": true,
-      "documentation": "https://github.com/atharvjain859-del/JARVIS_UPDATES/blob/main/features/openssh_sftp_setup.md"
+      "id": "universal_executor",
+      "name": "Universal application and project executor",
+      "description": "Discover installed Windows applications automatically and launch registered projects or scripts without a hard-coded application list.",
+      "status": "enabled",
+      "approval_required": false
     }
   ]
 }
