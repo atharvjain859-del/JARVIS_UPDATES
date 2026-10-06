@@ -90,6 +90,17 @@ class Router:
         if l == "stop all monitors":
             self.app.monitors.stop_all()
             return self.say("All website monitors have been stopped.")
+        # Universal application/project launcher (future-proof).
+        # If it cannot find a local target, the existing website/path handler runs next.
+        if l.startswith(("open ", "launch ", "start ")):
+            try:
+                from core.universal_executor import execute
+                handled, response = execute(x)
+                if handled and response:
+                    return self.say(response)
+            except Exception as exc:
+                print(f"[Universal Executor] {exc}")
+
         if l.startswith("open "):
             return self.open_target(x[5:].strip())
         if l.startswith("search google "):
@@ -97,6 +108,13 @@ class Router:
         if l.startswith("search youtube "):
             return self.search("https://www.youtube.com/results?search_query=", x[15:])
         if l.startswith("run "):
+            try:
+                from core.universal_executor import execute
+                handled, response = execute(x)
+                if handled and response:
+                    return self.say(response)
+            except Exception as exc:
+                print(f"[Universal Executor] {exc}")
             return self.run_program(x[4:].strip())
 
         # Social tools
